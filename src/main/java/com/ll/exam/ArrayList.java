@@ -20,9 +20,12 @@ class ArrayList {
     }
 
     public void addAt(int data, int idx){
-        if(size==datum.length){
-            sizeUp();
+        sizeUpIfFull();
+        for(int i=size-1; i>=data; i--){
+            datum[i+1] = datum[i];
         }
+        datum[data] = idx;
+        size++;
     }
 
     private void sizeUpIfFull() {

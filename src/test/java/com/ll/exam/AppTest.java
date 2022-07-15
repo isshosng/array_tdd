@@ -132,8 +132,16 @@ public class AppTest {
     }
 
     @Test
-    void addAt를_사용하면_한칸씩_밀림(){
+    void addAt(){
         ArrayList al = new ArrayList();
-        al.add(1);
+        al.add(1000);
+        al.add(200);
+        al.add(30);
+        al.addAt(1,100);
+
+        int rs = al.get(1);
+        int rs2 = al.size();
+        assertEquals(100,rs);
+        assertEquals(4,rs2);
     }
 }
